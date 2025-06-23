@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Travel Blog Homepage</title>
+  <style>
+    /* Reset & base */
+    #scrollBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  font-size: 20px;
+  background-color: #0a9396;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: none;
+  z-index: 1000;
+}
+#scrollBtn:hover {
+  background-color: #007f8d;
+}
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Container */
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px 0;
+    }
+
+    /* Header */
+    header {
+      background-color: #005f73;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 5px;
+    }
+    header p {
+      font-style: italic;
+      font-size: 1.1rem;
+    }
+
+    /* Navigation */
+    nav {
+      background-color: #0a9396;
+      padding: 10px 0;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    nav a {
+      margin: 0 15px;
+      font-weight: 600;
+      color: white;
+      font-size: 1.1rem;
+    }
+    nav a:hover {
+      color: #94d2bd;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      height: 350px;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .hero h2 {
+      font-size: 3rem;
+      background-color: rgba(0,0,0,0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    /* Featured Destinations */
+    .featured-destinations {
+      margin-bottom: 50px;
+    }
+    .featured-destinations h3 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+      text-align: center;
+    }
+    .destinations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 20px;
+    }
+    .destination-card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .destination-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+    .destination-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .destination-content {
+      padding: 15px;
+    }
+    .destination-content h4 {
+      margin-bottom: 10px;
+      color: #0077cc;
+    }
+    .destination-content p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+    .destination-content a {
+      display: inline-block;
+      margin-top: 10px;
+      font-weight: 600;
+      color: #005f73;
+    }
+    .destination-content a:hover {
+      color: #0a9396;
+    }
+
+    /* Travel Tips */
+    .travel-tips {
+      background-color: #94d2bd;
+      padding: 30px 20px;
+      border-radius: 8px;
+      color: #001219;
+      margin-bottom: 50px;
+      text-align: center;
+    }
+    .travel-tips h3 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+    .tips-list {
+      list-style: none;
+      max-width: 600px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .tips-list li {
+      background-color: white;
+      padding: 15px 20px;
+      border-radius: 6px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+      flex: 1 1 200px;
+      font-weight: 600;
+      color: #0077cc;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #005f73;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9rem;
+      border-radius: 0 0 8px 8px;
+    }
+
+    /* Responsive */
+    @media(max-width: 600px) {
+      .hero h2 {
+        font-size: 2rem;
+        padding: 10px;
+      }
+      nav a {
+        margin: 0 8px;
+        font-size: 1rem;
+      }
+      .tips-list {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<button id="scrollBtn" title="Go to top">↑</button>
+<body>
+  <header>
+    <h1>Wanderlust Diaries</h1>
+    <p>Explore the world, one adventure at a time</p>
+  </header>
+
+  <nav>
+  <a href="index.html">Home</a>
+  <a href="destination.html">Destinations</a>
+  <a href="tips.html">Travel Tips</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+
+  <section class="hero">
+    <h2>Your Next Adventure Awaits</h2>
+  </section>
+
+  <section class="container featured-destinations">
+    <h3>Featured Destinations</h3>
+    <div class="destinations-grid">
+      <article class="destination-card">
+        <img src="images/santorinihome.jpg" alt="Santorini, Greece" />
+        <div class="destination-content">
+          <h4>Santorini, Greece</h4>
+          <p>Experience stunning sunsets and beautiful whitewashed buildings overlooking the Aegean Sea.</p>
+          <a href="santorini.html">Read More</a>
+        </div>
+      </article>
+
+      <article class="destination-card">
+        <img src="images/japanhome.jpg" alt="Kyoto, Japan" />
+        <div class="destination-content">
+          <h4>Kyoto, Japan</h4>
+          <p>Discover ancient temples, vibrant gardens, and the charm of traditional tea ceremonies.</p>
+          <a href="kyoto.html">Read More</a>
+        </div>
+      </article>
+
+      <article class="destination-card">
+        <img src="images/machu-picchu-ci.jpg" alt="Machu Picchu, Peru" />
+        <div class="destination-content">
+          <h4>Machu Picchu, Peru</h4>
+          <p>Explore the mysterious Incan ruins set high in the Andes mountains with breathtaking views.</p>
+          <a href="machu-picchu.html">Read More</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="travel-tips">
+    <h3>Top Travel Tips</h3>
+    <ul class="tips-list">
+      <li>Pack Light and Smart</li>
+      <li>Always Carry a Travel Journal</li>
+      <li>Respect Local Cultures</li>
+      <li>Try Local Foods</li>
+      <li>Stay Safe and Aware</li>
+    </ul>
+  </section>
+
+  <footer>
+    &copy; 2025 Wanderlust Diaries. All Rights Reserved.
+  </footer>
+  <script>
+  const scrollBtn = document.getElementById("scrollBtn");
+
+  window.onscroll = function () {
+    scrollBtn.style.display = window.scrollY > 200 ? "block" : "none";
+  };
+
+  scrollBtn.onclick = function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+</script>
+
+</body>
+</html>

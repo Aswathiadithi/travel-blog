@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Top Travel Destinations</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+    }
+    header {
+      background-color: #005f73;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #0a9396;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #94d2bd;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+    .destination-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 15px;
+    }
+    .card-content h3 {
+      margin-bottom: 10px;
+      color: #0077cc;
+    }
+    .card-content p {
+      font-size: 0.9rem;
+      color: #555;
+    }
+    footer {
+      background-color: #005f73;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Top Travel Destinations</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="destinations.html">Destinations</a>
+    <a href="tips.html">Travel Tips</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="container">
+    <h2>Explore Amazing Places</h2>
+    <div class="destination-list">
+      <div class="card">
+       <img src="images/balicover.jpg" alt="Bali">
+
+        <div class="card-content">
+          <h3>Bali, Indonesia</h3>
+          <p>Beautiful beaches, lush forests, and vibrant culture await in this island paradise.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/paris.jpg" alt="Paris">
+        <div class="card-content">
+          <h3>Paris, France</h3>
+          <p>The city of love with iconic landmarks, art, and cuisine like no other.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/newyork.jpg" alt="New York">
+        <div class="card-content">
+          <h3>New York City, USA</h3>
+          <p>Buzzing with life, skyscrapers, Broadway shows, and endless attractions.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/dubai.jpg" alt="Dubai">
+        <div class="card-content">
+          <h3>Dubai, UAE</h3>
+          <p>Experience futuristic architecture, luxury shopping, and desert adventures.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Wanderlust Diaries. All rights reserved.
+  </footer>
+
+</body>
+</html>
